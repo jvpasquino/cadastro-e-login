@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SITE TESTE</title>
+
+
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(45deg, rgb(0, 145, 255), rgb(64, 255, 0))
+        }
+
+        form{
+            width: 300px;
+            margin: 250px auto;
+            text-align: center;
+        }
+
+        h3{
+            color: #ffffff;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+        }
+
+        input[type="text"], input[type="password"]{
+            display: block;
+            margin: 10px auto;
+            width: 250px;
+            height: 40px;
+            border-radius: 15px;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+            border: 10px solid rgb(255, 255, 255);
+            outline: none;
+            
+        }
+
+        button, input[type="submit"]{
+            margin: 10px auto;
+            width: 123px;
+            height: 30px;
+            border-radius: 20px;
+            align-items: center;
+            color: #000000;
+            background-color: rgb(255, 255, 255);
+            border: none;
+
+        }
+        
+        .card{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            align-items: auto;
+            text-align: center;
+            padding: 40px;
+            width: 333px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            
+        }
+        
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+
+
+    <form method="post" action="login.php">
+        <div class ="card">
+            <h3>Login</h3>
+            <input type = "text" placeholder = "E-mail" name = "login" required>
+            <input type = "password" placeholder = "Senha" name = "senha" required>
+            <input type = "submit" placeholder = "Entrar" value="Entrar">
+            <button type= "button" onclick="cadastrar()">Cadastrar</button>
+        </div>
+    </form>
+
+
+
+    <script>
+
+    function cadastrar(){
+        location.href = "cadastro.html";
+    }
+
+    </script>
+
+</body>
+</html>

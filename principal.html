@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página Principal</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display:flex;
+    height:100vh;
+    background: linear-gradient(135deg,#00b4db,#0083b0);
+}
+
+/* menu lateral */
+.sidebar{
+    width:250px;
+    background:#1e1e2f;
+    color:white;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+}
+
+.sidebar h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.sidebar button{
+    background:#2c2c3e;
+    color:white;
+    border:none;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:15px;
+}
+
+.sidebar button:hover{
+    background:#00b4db;
+}
+
+/* tela principal */
+.main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+/* banner */
+.banner{
+    height:200px;
+    overflow:hidden;
+}
+
+.banner video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* conteudo */
+.content{
+    flex:1;
+    background:white;
+    padding:30px;
+    border-top-left-radius:20px;
+    box-shadow:0 -4px 10px rgba(0,0,0,0.2);
+    font-size:18px;
+}
+
+/* logo */
+.logo{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo img{
+    width: 150px;
+    max-width: 100%;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <div class="logo">
+        <img src="videos/ZERO-removebg-preview.png" alt="logo">
+    </div>
+
+    <button onclick="mostrarDetalhe('login')">Login</button>
+    <button onclick="mostrarDetalhe('senha')">Senha</button>
+    <button onclick="mostrarDetalhe('sobre')">Sobre</button>
+    <button onclick="mostrarDetalhe('video')">Vídeo</button>
+    <button onclick="voltarLogin()">Sair</button>
+</div>
+
+<div class="main">
+    <div class="banner">
+        <video autoplay loop muted>
+            <source src="videos/video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="content" id="conteudo">
+        Bem-vindo ao sistema! 👋
+    </div>
+</div>
+
+<script>
+function mostrarDetalhe(tipo){
+    const conteudo = document.getElementById("conteudo");
+
+    if(tipo === "login"){
+        conteudo.innerHTML = "<h2>Informação de Login</h2><p>O login funciona com usuário ou email cadastrado.</p>";
+    }
+    else if(tipo === "senha"){
+        conteudo.innerHTML = "<h2>Senha</h2><p>A senha deve ser igual à cadastrada no sistema.</p>";
+    }
+    else if(tipo === "sobre"){
+        conteudo.innerHTML = "<h2>Sobre</h2><p>Projeto de Desenvolvimento Web usando HTML, CSS, PHP e MySQL.</p>";
+    }
+    else if(tipo === "video"){
+        conteudo.innerHTML = `
+            <h2>Vídeo</h2>
+            <video controls style="width:100%; margin-top:15px;">
+                <source src="videos/videoPainel.mp4" type="video/mp4">
+            </video>
+        `;
+    }
+}
+
+function voltarLogin(){
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

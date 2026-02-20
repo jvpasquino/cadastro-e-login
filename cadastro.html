@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <form id="formulario" method="post" action="cadastrar.php">
+        <div>
+            <h3>Cadastre-se</h3>
+            <input type="text" placeholder="Nome completo" name="nome" required>
+            <input type="text" placeholder="Adicione o e-mail" name="email" required>
+            <input type="password" placeholder="Crie uma senha" name="senha" id="senha" required>
+            <input type="password" placeholder="Confime a senha" id="confirmarSenha" required>
+            <button type="submit">Cadastrar</button>
+        </div>
+    </form>
+    <p id="mensagem"></p>
+    <script>
+        const form = document.getElementById("formulario");
+        const mensagem = document.getElementById("mensagem");
+
+        form.addEventListener("submit", function(e){
+            const senha =  document.getElementById("senha").value;
+            const confirmar = document.getElementById("confirmarSenha").value;
+
+            if (senha !== confirmar){
+                e.preventDefault();
+                mensagem.style.color = "red";
+                mensagem.textContent = "As senhas não são iguais, tente novamente.";
+            }
+        })
+    </script>
+</body>
+</html>
